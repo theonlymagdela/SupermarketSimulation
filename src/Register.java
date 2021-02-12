@@ -19,6 +19,7 @@ public class Register {
 
         System.out.println("barcode, name, amount, price");
         System.out.println("~~~~~~~~~~~~~~~~~~~~~~~~~~~~");
+
         for(Product product: basket.getBasket()) {
             if(!bill.isKey(product.getName())) {
                 bill.addToBill(product, product.getQuantity());
@@ -27,8 +28,12 @@ public class Register {
             }
             BigDecimal price = getPrice(product).multiply(new BigDecimal(product.getQuantity()));
             total = total.add(price);
-            System.out.println(product.getBarcode() + ", " + product.getName() + ", " + product.getQuantity() + ", " + String.format("%.2f", price) + " PLN");
+            System.out.println(product.getBarcode() + ", " +
+                    product.getName() + ", " +
+                    product.getQuantity() + ", " +
+                    String.format("%.2f", price) + " PLN");
         }
+
         System.out.println("~~~~~~~~~~~~~~~~~~~~~~~~~~~~");
         System.out.println("Total " + String.format("%.2f", total) + " PLN");
         bill.clearBill();
@@ -46,8 +51,10 @@ public class Register {
             calculatedPrice = productPrice;
         } else if (qty == 2) {
             calculatedPrice = (new BigDecimal("0.75")).multiply(productPrice);
+            System.out.println("-- every second 25% off");
         } else {
             calculatedPrice = (new BigDecimal("0.5")).multiply(productPrice);
+            System.out.println("-- every third and further 50% off");
         }
 
         return calculatedPrice;

@@ -51,10 +51,10 @@ public class Register {
             calculatedPrice = productPrice;
         } else if (qty == 2) {
             calculatedPrice = (new BigDecimal("0.75")).multiply(productPrice);
-            System.out.println("-- every second 25% off");
+            System.out.println("-- every second 25% off ⇩⇩");
         } else {
             calculatedPrice = (new BigDecimal("0.5")).multiply(productPrice);
-            System.out.println("-- every third and further 50% off");
+            System.out.println("-- every third and further 50% off ⇩⇩");
         }
 
         return calculatedPrice;

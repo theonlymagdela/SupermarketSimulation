@@ -1,5 +1,7 @@
 import products.Product;
 
+import java.math.BigDecimal;
+
 public class Register {
 
     private final Basket basket = new Basket();
@@ -13,7 +15,7 @@ public class Register {
     }
 
     public void getTheBill() {
-        double total = 0.0;
+        BigDecimal total = new BigDecimal("0.0");
 
         System.out.println("barcode, name, amount, price");
         System.out.println("~~~~~~~~~~~~~~~~~~~~~~~~~~~~");
@@ -23,8 +25,8 @@ public class Register {
             } else {
                 bill.replaceValue(product, bill.getValueByKey(product.getName()) + 1);
             }
-            double price = getPrice(product);
-            total = total + price;
+            BigDecimal price = getPrice(product);
+            total = total.add(price);
             System.out.println(product.getBarcode() + ", " + product.getName() + ", " + 1 + ", " + String.format("%.2f", price) + " PLN");
         }
         System.out.println("~~~~~~~~~~~~~~~~~~~~~~~~~~~~");
@@ -33,19 +35,19 @@ public class Register {
         basket.clearBasket();
     }
 
-    public double getPrice(Product product) {
-        double productPrice = product.getPrice();
-        double calculatedPrice;
+    public BigDecimal getPrice(Product product) {
+        BigDecimal productPrice = product.getPrice();
+        BigDecimal calculatedPrice;
         int qty = bill.getValueByKey(product.getName());
 
         if(qty == 0) {
-            calculatedPrice = 0;
+            calculatedPrice = new BigDecimal(0);
         } else if (qty == 1) {
             calculatedPrice = productPrice;
         } else if (qty == 2) {
-            calculatedPrice = 0.75 * productPrice;
+            calculatedPrice = (new BigDecimal("0.75")).multiply(productPrice);
         } else {
-            calculatedPrice = 0.5 * productPrice;
+            calculatedPrice = (new BigDecimal("0.5")).multiply(productPrice);
         }
 
         return calculatedPrice;

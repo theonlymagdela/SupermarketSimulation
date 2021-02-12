@@ -1,12 +1,14 @@
 package products;
 
+import java.math.BigDecimal;
+
 public class Product {
 
     private final int barcode;
     private final String name;
-    private final double price;
+    private final BigDecimal price;
 
-    public Product(int barcode, String name, double price) {
+    public Product(int barcode, String name, BigDecimal price) {
         this.barcode = barcode;
         this.name = name;
         this.price = price;
@@ -20,7 +22,7 @@ public class Product {
         return name;
     }
 
-    public double getPrice() {
+    public BigDecimal getPrice() {
         return price;
     }
 }

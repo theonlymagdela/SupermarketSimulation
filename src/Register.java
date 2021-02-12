@@ -25,7 +25,7 @@ public class Register {
             } else {
                 bill.replaceValue(product, bill.getValueByKey(product.getName()) + product.getQuantity());
             }
-            BigDecimal price = getPrice(product);
+            BigDecimal price = getPrice(product).multiply(new BigDecimal(product.getQuantity()));
             total = total.add(price);
             System.out.println(product.getBarcode() + ", " + product.getName() + ", " + product.getQuantity() + ", " + String.format("%.2f", price) + " PLN");
         }

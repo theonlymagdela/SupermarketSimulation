@@ -12,6 +12,7 @@ public class Main {
         rg.addToBasket(new Product(ProductInfo.BEER.getBarcode(), ProductInfo.BEER.getName(), ProductInfo.BEER.getPrice(), 1));
         rg.addToBasket(new Product(ProductInfo.CHOCOLATE.getBarcode(), ProductInfo.CHOCOLATE.getName(), ProductInfo.CHOCOLATE.getPrice(), 2));
         rg.addToBasket(new Product(ProductInfo.BEER.getBarcode(), ProductInfo.BEER.getName(), ProductInfo.BEER.getPrice(), 1));
+        rg.addToBasket(new Product(ProductInfo.EGGS.getBarcode(), ProductInfo.EGGS.getName(), ProductInfo.EGGS.getPrice(), 8));
         rg.addToBasket(new Product(ProductInfo.BEER.getBarcode(), ProductInfo.BEER.getName(), ProductInfo.BEER.getPrice(), 1));
         rg.addToBasket(new Product(ProductInfo.SODA.getBarcode(), ProductInfo.SODA.getName(), ProductInfo.SODA.getPrice(), 1));
 

@@ -6,7 +6,7 @@ public enum ProductInfo {
 
     BEER(1001, "beer", new BigDecimal("3.5")),
     EGGS(2463,"eggs", new BigDecimal("4.6")),
-    CHOCOLATE(8573,"chocolate", new BigDecimal("3.9")),
+    CHOCOLATE(8573,"chocolate", new BigDecimal("4.2")),
     SODA(2736,"soda", new BigDecimal("2.9")),
     BREAD(9386, "bread", new BigDecimal("3.9"));
 

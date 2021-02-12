@@ -7,13 +7,13 @@ public class Main {
 
         Register rg = new Register();
 
-        rg.addToBasket(new Product(ProductInfo.BREAD.getBarcode(), ProductInfo.BREAD.getName(), ProductInfo.BREAD.getPrice()));
-        rg.addToBasket(new Product(ProductInfo.SODA.getBarcode(), ProductInfo.SODA.getName(), ProductInfo.SODA.getPrice()));
-        rg.addToBasket(new Product(ProductInfo.BEER.getBarcode(), ProductInfo.BEER.getName(), ProductInfo.BEER.getPrice()));
-        rg.addToBasket(new Product(ProductInfo.CHOCOLATE.getBarcode(), ProductInfo.CHOCOLATE.getName(), ProductInfo.CHOCOLATE.getPrice()));
-        rg.addToBasket(new Product(ProductInfo.BEER.getBarcode(), ProductInfo.BEER.getName(), ProductInfo.BEER.getPrice()));
-        rg.addToBasket(new Product(ProductInfo.BEER.getBarcode(), ProductInfo.BEER.getName(), ProductInfo.BEER.getPrice()));
-        rg.addToBasket(new Product(ProductInfo.SODA.getBarcode(), ProductInfo.SODA.getName(), ProductInfo.SODA.getPrice()));
+        rg.addToBasket(new Product(ProductInfo.BREAD.getBarcode(), ProductInfo.BREAD.getName(), ProductInfo.BREAD.getPrice(), 2));
+        rg.addToBasket(new Product(ProductInfo.SODA.getBarcode(), ProductInfo.SODA.getName(), ProductInfo.SODA.getPrice(), 1));
+        rg.addToBasket(new Product(ProductInfo.BEER.getBarcode(), ProductInfo.BEER.getName(), ProductInfo.BEER.getPrice(), 1));
+        rg.addToBasket(new Product(ProductInfo.CHOCOLATE.getBarcode(), ProductInfo.CHOCOLATE.getName(), ProductInfo.CHOCOLATE.getPrice(), 2));
+        rg.addToBasket(new Product(ProductInfo.BEER.getBarcode(), ProductInfo.BEER.getName(), ProductInfo.BEER.getPrice(), 1));
+        rg.addToBasket(new Product(ProductInfo.BEER.getBarcode(), ProductInfo.BEER.getName(), ProductInfo.BEER.getPrice(), 1));
+        rg.addToBasket(new Product(ProductInfo.SODA.getBarcode(), ProductInfo.SODA.getName(), ProductInfo.SODA.getPrice(), 1));
 
         rg.getTheBill();
     }

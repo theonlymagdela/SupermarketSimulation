@@ -21,13 +21,13 @@ public class Register {
         System.out.println("~~~~~~~~~~~~~~~~~~~~~~~~~~~~");
         for(Product product: basket.getBasket()) {
             if(!bill.isKey(product.getName())) {
-                bill.addToBill(product, 1);
+                bill.addToBill(product, product.getQuantity());
             } else {
-                bill.replaceValue(product, bill.getValueByKey(product.getName()) + 1);
+                bill.replaceValue(product, bill.getValueByKey(product.getName()) + product.getQuantity());
             }
             BigDecimal price = getPrice(product);
             total = total.add(price);
-            System.out.println(product.getBarcode() + ", " + product.getName() + ", " + 1 + ", " + String.format("%.2f", price) + " PLN");
+            System.out.println(product.getBarcode() + ", " + product.getName() + ", " + product.getQuantity() + ", " + String.format("%.2f", price) + " PLN");
         }
         System.out.println("~~~~~~~~~~~~~~~~~~~~~~~~~~~~");
         System.out.println("Total " + String.format("%.2f", total) + " PLN");
